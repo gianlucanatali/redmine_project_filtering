@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 require 'redmine'
 
-require_dependency 'redmine_project_filtering/hooks'
-require_dependency 'redmine_project_filtering/patches'
+require_dependency 'project_filtering_hook_listener'
+require_dependency 'project_filtering_project_controller_patch'
 
 Rails.configuration.to_prepare do
   unless ProjectsController.included_modules.include?(FilterProjectsControllerPatch)
@@ -17,4 +17,6 @@ Redmine::Plugin.register :redmine_project_filtering do
   version '0.0.1'
   url 'http://github.com/bluezio/redmine_project_fitlering'
   author_url 'http://neptuno.uca.es/~agarcia'
+
+  requires_redmine :version_or_higher => '2.5'
 end
