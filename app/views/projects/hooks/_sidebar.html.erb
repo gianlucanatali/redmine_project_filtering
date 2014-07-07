@@ -1,2 +1,18 @@
-<p>Test, test.</p>
+<%= form_tag({}, :method => :get) do %>
+  <h3><%= l(:label_section_project_filtering) %></h3>
 
+  <div class="filtering_role">
+    <label for="role_id"><%=l(:label_filtering_by_role)%></label>
+    <%= select_tag(:filter_roles,
+        options_for_select(
+          @all_roles.map {|r| [r.name, r.id]},
+          @filter_roles
+        ),
+        {multiple: true, size: 6}) %>
+  </div>
+
+  <p>
+    <%= submit_tag l(:button_apply), :class => 'button-small', :name => nil %>
+    <%= button_tag l(:button_reset), :type => 'reset', :class => 'button-small', :name => nil %>
+  </p>
+<% end %>

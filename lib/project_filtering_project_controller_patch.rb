@@ -18,11 +18,27 @@ module FilterProjectsControllerPatch
 
   module InstanceMethods
     def index_with_filter(context={})
+      # Invoke the original version first
       index_without_filter
 
-      # For now, just try duplicating the filter element
-      @projects.push(@projects[0])
+      # Domain objects #########################################################
+      @all_roles = Role.sorted
 
+      # Filter by roles ########################################################
+      if params[:filter_roles] then
+        @filter_roles = params[:filter_roles].map {|r| r[0].to_i}
+      else
+        @filter_roles = @all_roles.map {|r| r.id}
+      end
+      @filter_roles = @filter_roles.sort
+
+      @projects = @projects.select do |p|
+        sorted_proles_ids = User.current.roles_for_project(p).map {|r| r.id}.sort
+        matching_proles = @filter_roles & sorted_proles_ids
+        next not(matching_proles.empty?)
+      end
+
+      # Computed fields ########################################################
       @project_count = @projects.count
     end
   end
