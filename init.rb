@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 Redmine::Plugin.register :redmine_project_filtering do
   name 'Redmine Project Filtering plugin'
-  author 'Author name'
-  description 'This is a plugin for Redmine'
+  author 'Antonio García-Domínguez'
+  description 'Adds filtering to the project list'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  url 'http://github.com/bluezio/redmine_project_fitlering'
+  author_url 'http://neptuno.uca.es/~agarcia'
 end
