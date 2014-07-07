@@ -2,6 +2,13 @@
 require 'redmine'
 
 require_dependency 'redmine_project_filtering/hooks'
+require_dependency 'redmine_project_filtering/patches'
+
+Rails.configuration.to_prepare do
+  unless ProjectsController.included_modules.include?(FilterProjectsControllerPatch)
+    ProjectsController.send(:include, FilterProjectsControllerPatch)
+  end
+end
 
 Redmine::Plugin.register :redmine_project_filtering do
   name 'Redmine Project Filtering plugin'
