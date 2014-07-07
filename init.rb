@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+require 'redmine'
+
+require_dependency 'redmine_project_filtering/hooks'
+
 Redmine::Plugin.register :redmine_project_filtering do
   name 'Redmine Project Filtering plugin'
   author 'Antonio García-Domínguez'
