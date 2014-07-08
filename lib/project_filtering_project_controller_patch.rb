@@ -26,7 +26,7 @@ module FilterProjectsControllerPatch
 
       # Filter by roles ########################################################
       if params[:filter_roles] then
-        @filter_roles = params[:filter_roles].map {|r| r[0].to_i}
+        @filter_roles = params[:filter_roles].map {|r| r.to_i}
       else
         @filter_roles = @all_roles.map {|r| r.id}
       end
