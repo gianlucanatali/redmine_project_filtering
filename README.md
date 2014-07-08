@@ -7,7 +7,9 @@ Redmine plugin that provides additional controls for filtering projects in the m
 
 So far, the project only supports filtering by the roles that the current user has on each project.
 
-The goal of this plugin is to remain as simple as possible: it does not add any new tables or assets itself. The plugin has been tested with Redmine 2.5.1: due to time constraints, it has not been tested with previous versions. If you'd like to try it with a previous version, please make sure to edit the `requires_redmine` directive in the `init.rb` file to suit your installation. If it works for you, please let me know and I'll update the `init.rb` file accordingly.
+The plugin has been tested with Redmine 2.5.1: due to time constraints, it has not been tested with previous versions. If you'd like to try it with a previous version, please make sure to edit the `requires_redmine` directive in the `init.rb` file to suit your installation. If it works for you, please let me know and I'll update the `init.rb` file accordingly.
+
+The plugin is available under the terms of the [GNU General Public License](http://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
 
 Installation
 ------------
@@ -21,6 +23,8 @@ After cloning the repository, you will need to restart your Redmine instance so 
 
 Design notes
 ------------
+
+The goal of this plugin is to remain as simple as possible: it does not add any new tables or assets itself.
 
 The plugin integrates into Redmine through two advanced mechanisms:
 
