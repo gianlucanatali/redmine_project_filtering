@@ -1,3 +1,0 @@
-= redmine_project_filtering
-
-Description goes here
