@@ -3,6 +3,8 @@ redmine_project_filtering
 
 Redmine plugin that provides additional controls for filtering projects in the main project list.
 
+![Screenshot of the extended sidebar](doc/images/project_filtering.png)
+
 So far, the project only supports filtering by the roles that the current user has on each project.
 
 The goal of this plugin is to remain as simple as possible: it does not add any new tables or assets itself. The plugin has been tested with Redmine 2.5.1: due to time constraints, it has not been tested with previous versions. If you'd like to try it with a previous version, please make sure to edit the `requires_redmine` directive in the `init.rb` file to suit your installation. If it works for you, please let me know and I'll update the `init.rb` file accordingly.
