@@ -2,13 +2,9 @@
   <h3><%= l(:label_section_project_filtering) %></h3>
 
   <div class="filtering_role">
-    <label for="role_id"><%=l(:label_filtering_by_role)%></label>
-    <%= select_tag(:filter_roles,
-        options_for_select(
-          @all_roles.map {|r| [r.name, r.id]},
-          @filter_roles
-        ),
-        {multiple: true, size: 6}) %>
+	<% ProjectCustomField.find(:all).each do |custom_field| %>
+	  <p><label><%= h(custom_field.name) %></label> <%= custom_field_tag_for_bulk_edit('project', custom_field, Project.all) %></p>
+	<% end %>
   </div>
 
   <p>

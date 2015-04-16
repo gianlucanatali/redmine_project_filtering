@@ -12,11 +12,10 @@ end
 
 Redmine::Plugin.register :redmine_project_filtering do
   name 'Redmine Project Filtering plugin'
-  author 'Antonio García-Domínguez'
+  author 'Gianluca Natali'
   description 'Adds filtering to the project list'
-  version '0.0.2'
-  url 'http://github.com/bluezio/redmine_project_fitlering'
-  author_url 'http://neptuno.uca.es/~agarcia'
+  version '0.0.8'
+  url 'https://github.com/gianlucanatali/redmine_project_filtering'
 
-  requires_redmine :version_or_higher => '2.5'
+  requires_redmine :version_or_higher => '2.2'
 end
