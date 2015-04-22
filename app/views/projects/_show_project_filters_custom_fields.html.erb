@@ -1,0 +1,14 @@
+<%= form_tag({}, :method => :get) do %>
+  <h3><%= l(:label_section_project_filtering) %></h3>
+
+  <div class="filtering_role">
+	<% ProjectCustomField.all.each do |custom_field| %>
+	  <p><label><%= h(custom_field.name) %></label> <%= custom_field_tag_for_bulk_edit('project', custom_field, Project.all) %></p>
+	<% end %>
+  </div>
+
+  <p>
+    <%= submit_tag l(:button_apply), :class => 'button-small', :name => nil %>
+    <%= button_tag l(:button_reset), :type => 'reset', :class => 'button-small', :name => nil %>
+  </p>
+<% end %>

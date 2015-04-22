@@ -14,8 +14,9 @@ Redmine::Plugin.register :redmine_project_filtering do
   name 'Redmine Project Filtering plugin'
   author 'Gianluca Natali'
   description 'Adds filtering to the project list'
-  version '0.0.8'
+  version '0.0.5'
   url 'https://github.com/gianlucanatali/redmine_project_filtering'
+  author_url 'gnatali@tibco.com'
 
-  requires_redmine :version_or_higher => '2.2'
+  requires_redmine :version_or_higher => '3.0'
 end

@@ -5,11 +5,14 @@ Redmine plugin that provides additional controls for filtering projects in the m
 
 ![Screenshot of the extended sidebar](doc/images/project_filtering.png)
 
-So far, the project only supports filtering by the roles that the current user has on each project.
+The project support the filtering using custom fields.
 
-The plugin has been tested with Redmine 2.5.1: due to time constraints, it has not been tested with previous versions. If you'd like to try it with a previous version, please make sure to edit the `requires_redmine` directive in the `init.rb` file to suit your installation. If it works for you, please let me know and I'll update the `init.rb` file accordingly.
+The plugin has been tested with Redmine 3.0: due to time constraints, it has not been tested with previous versions. If you'd like to try it with a previous version, please make sure to edit the `requires_redmine` directive in the `init.rb` file to suit your installation. If it works for you, please let me know and I'll update the `init.rb` file accordingly.
 
 The plugin is available under the terms of the [GNU General Public License](http://www.gnu.org/licenses/gpl-2.0.html), version 2 or later.
+
+For this plugin I used bluezio plugin as starting point:
+	https://github.com/bluezio/redmine_project_filtering
 
 Installation
 ------------
@@ -17,7 +20,7 @@ Installation
 To install this plugin, just clone it into your `plugins` subdirectory:
 
     cd plugins
-    git clone git://github.com/bluezio/redmine_project_filtering.git
+    git clone git://github.com/gianlucanatali/redmine_project_filtering
 
 After cloning the repository, you will need to restart your Redmine instance so it picks up the new plugin.
 
