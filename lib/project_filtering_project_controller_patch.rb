@@ -48,7 +48,7 @@ module FilterProjectsControllerPatch
 				final_query=final_query+" and customized_type='Project' "
 				logger.info "where:  #{final_query.inspect}"
 				logger.info "count keys:  #{custom.keys.size}"
-				customValRes = CustomValue.select("customized_id").where(final_query).group("customized_id").having("count(*)=#{custom.keys.size}")
+				customValRes = CustomValue.select("customized_id").where(final_query).group("customized_id").having("count(distinct custom_field_id)=#{custom.keys.size}")
 				logger.info "custom RESULT QUERY list:  #{customValRes.inspect}"
   		    
 				if !customValRes.blank?
